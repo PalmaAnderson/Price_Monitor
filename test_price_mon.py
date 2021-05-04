@@ -24,3 +24,8 @@ class LearnTest(unittest.TestCase):
 if __name__ == '__main__':
 
     unittest.main()
+
+    from mockito import when, mock, unstub
+
+
+
