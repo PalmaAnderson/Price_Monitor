@@ -9,13 +9,13 @@ class LearnTest(unittest.TestCase):
         result=Price_mon.pricetofloat(string)
         self.assertEqual(result,expected) 
 
-    def test_pricetofloatcomespaço(self):
+    def test_pricetofloatcomespaco(self):
         string="R$ 12.345"
         expected=12345.0
         result=Price_mon.pricetofloat(string)
         self.assertEqual(result,expected)
 
-    def test_pricetofloat_trocavirgulaespaço(self):
+    def test_pricetofloat_trocavirgulaespaco(self):
         string="1234,56"
         expected=1234.56
         result=Price_mon.pricetofloat(string)
