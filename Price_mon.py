@@ -1,7 +1,5 @@
 from selenium import webdriver
 import re
-PATH = "C:\Program Files\chromedriver90.exe"
-driver = webdriver.Chrome(PATH)
 
 def pricetofloat(price):
     try:
@@ -23,13 +21,13 @@ def pricetofloat(price):
         price=price.replace("R$", "")
     except:
         pass
-
     
     return float(price)
 
 
-#.replace(",", ".").replace(" ","").replace ("R$",""))
+
 def busca(site,seletor,nome,link):
+
     driver.get(link)
     try:
         price=0
@@ -43,6 +41,9 @@ def busca(site,seletor,nome,link):
     return price
 
 if __name__ == '__main__':
+    PATH = "C:\Program Files\chromedriver90.exe"
+    driver = webdriver.Chrome(PATH)
+
     file = open("Links.csv", "r")
     param = file.read()
     itens = param.split("\n")
