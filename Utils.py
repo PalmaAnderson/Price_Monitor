@@ -71,7 +71,9 @@ def handle_db_write(price,link_id,time):
         conn.commit()
 
         conn.close()
-
+    else:
+        print("!!", end="")
+        
 if __name__ == '__main__':
     print("Utils.py não deve ser executada isolamente")
 

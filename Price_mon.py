@@ -8,8 +8,6 @@ from mockito import when, mock, unstub
 import re, sqlite3,time
 import Utils
 
-
-
 #pip install pipreqs
 #pipreqs path/to/project
 #$ pip install -r requirements.txt
@@ -21,6 +19,8 @@ class prices:
         self.link_id    = link_id
 
 def busca(site,seletor,nome,link):
+    #todo estuda possibilidade factory/singleton
+    #b2w "Please verify you are a human"
 
     if site=="Kabum":
         try:
@@ -28,11 +28,14 @@ def busca(site,seletor,nome,link):
             string_price=secret.loja_que_explode(link)
         except:
             string_price="0"
-        print(string_price)
-        return string_price
-        
+        finally:
+            print(string_price)
+            return string_price
+
     driver.get(link)
-    if site=="Casasbahia":
+
+    #todo implementar o loop wait element
+    if site=="Casasbahia" or site=="Extra":
         time.sleep(3)
 
     try:
@@ -52,8 +55,6 @@ def busca(site,seletor,nome,link):
             string_price=driver.find_elements_by_class_name(nome)[1].text
         except:
             string_price="0"
-
-
 
     print(string_price)
     return string_price
@@ -95,4 +96,4 @@ if __name__ == '__main__':
         Utils.handle_db_write(prices_list[x].price, prices_list[x].link_id,time)
     print("end\t",time)
 
- 
+    import Price_plot
