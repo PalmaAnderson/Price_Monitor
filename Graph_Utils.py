@@ -4,7 +4,7 @@ def read():
     return html
 
 def save_to_file(html):
-    file = open("test.html","w")
+    file = open("graph.html","w")
     file.write(html)
     file.close()
 

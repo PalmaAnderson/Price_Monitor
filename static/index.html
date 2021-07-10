@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Spread Scanner</title>
+  <link href="/static/bootstrap.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+  <script src="/static/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/static/jquery-3.5.1.slim.min.js"><\/script>')</script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <link href="/static/jumbotron.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    .c1 {
+      background-color: #333337;
+    }
+
+    .c2 {
+      background-color: #4D4D50;
+    }
+
+    .c5 {
+      background-color: #99999B;
+    }
+
+    .c6 {
+      background-color: crimson;
+    }
+
+    .form-control {
+      height: 25px;
+    }
+
+    #label-kp,
+    #label-ki,
+    #label-kd,
+    #label-k,
+    #label-tal,
+    #input-kp,
+    #input-ki,
+    #input-kd,
+    #input-k,
+    #input-tal {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="height: 44px;">
+    <a class="navbar-brand" href="./"><img src="/static/logo-gray.png" alt="logo" width="50%" height="50%"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Barra de navegação -->
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"> Spread Scanner </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/import/" tabindex="-1" aria-disabled="true"> Importar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/howtouse/" tabindex="-1" aria-disabled="true"> Como usar</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Info</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Nome: Anderson Andre Palma</a>
+            <a class="dropdown-item" href="#">Disciplina: C214</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Conteúdo da página -->
+  <main role="main">
+    <div class=".container">
+      <div class="row" div style="text-align: center;">
+        <div class="col-xl-1">
+        </div>
+        <!-- Campos de entrada dos parâmetros necessários para simulação -->
+        <div class="col-xl-2 align-center">
+          <!-- Utiliza-se o método get para capturar as entradas, adicionando valores a url -->
+          <form method="GET" action="/">
+            <!-- AAAAAAAAA -->
+            <h5 class="text-center">MODO:</h5>
+            <div class="btn-group btn-block btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-primary c1 btn-sm">
+                <input type="radio" name="modo" value="0" id="0" onclick="handleClickM();">Cont.
+              </label>
+              <label class="btn btn-primary  c2 btn-sm">
+                <input type="radio" name="modo" value="1" id="1" onclick="handleClickM();"> Par.
+              </label>
+              <label class="btn btn-primary  c5 btn-sm">
+                <input type="radio" name="modo" value="3" id="3" onclick="handleClickPID();"> Unit.
+              </label>
+              <label class="btn btn-danger  c6 btn-sm">
+                <input type="radio" name="modo" value="4" id="4" onclick="handleClickM();"> Steps
+              </label>
+            </div>
+            <br>
+            <br>
+
+
+            <!-- AAAAAAAAAAAA -->
+            <h5 class="text-center">Contratos:</h5>
+            <div class="btn-group btn-block btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-success c1 btn-sm">
+                <input type="radio" name="contrato1" value="F" id="F" onclick="handleClickM();">F
+              </label>
+              <label class="btn btn-success  c2 btn-sm">
+                <input type="radio" name="contrato1" value="H" id="H" onclick="handleClickM();"> H
+              </label>
+              <label class="btn btn-success  c5 btn-sm">
+                <input type="radio" name="contrato1" value="K" id="K" onclick="handleClickPID();"> K
+              </label>
+              <label class="btn btn-success  c1 btn-sm">
+                <input type="radio" name="contrato1" value="N" id="N" onclick="handleClickM();">N
+              </label>
+              <label class="btn btn-success  c2 btn-sm">
+                <input type="radio" name="contrato1" value="U" id="U" onclick="handleClickM();"> U
+              </label>
+              <label class="btn btn-success  c5 btn-sm">
+                <input type="radio" name="contrato1" value="X" id="X" onclick="handleClickPID();"> X
+              </label>
+              </br>
+
+              <!-- <label class="btn btn-primary c6 btn-sm">
+                <input type="radio" name="Modo" value="Sint" id="Sint" onclick="handleClickSint();"> Sint
+              </label> -->
+              <!-- Funções em javascript para renderização condicional, de acordo com o modo selecionado -->
+              <script>
+                function handleClickM() {
+                  document.getElementById("label-kp").style.display = "none";
+                  document.getElementById("label-ki").style.display = "none";
+                  document.getElementById("label-kd").style.display = "none";
+                  document.getElementById("input-kp").style.display = "none";
+                  document.getElementById("input-ki").style.display = "none";
+                  document.getElementById("input-kd").style.display = "none";
+                  document.getElementById("label-k").style.display = "none";
+                  document.getElementById("label-tal").style.display = "none";
+                  document.getElementById("input-k").style.display = "none";
+                  document.getElementById("input-tal").style.display = "none";
+                }
+
+              </script>
+            </div>
+            <!-- neww -->
+            <div class="btn-group btn-block btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-danger c1 btn-sm">
+                <input type="radio" name="contrato2" value="F" id="F" onclick="handleClickM();">F
+              </label>
+              <label class="btn btn-danger  c2 btn-sm">
+                <input type="radio" name="contrato2" value="H" id="H" onclick="handleClickM();"> H
+              </label>
+              <label class="btn btn-danger  c5 btn-sm">
+                <input type="radio" name="contrato2" value="K" id="K" onclick="handleClickPID();"> K
+              </label>
+              <label class="btn btn-danger  c1 btn-sm">
+                <input type="radio" name="contrato2" value="N" id="N" onclick="handleClickM();">N
+              </label>
+              <label class="btn btn-danger  c2 btn-sm">
+                <input type="radio" name="contrato2" value="U" id="U" onclick="handleClickM();"> U
+              </label>
+              <label class="btn btn-danger  c5 btn-sm">
+                <input type="radio" name="contrato2" value="X" id="X" onclick="handleClickPID();"> X
+              </label>
+              </br>
+
+
+
+              </script>
+
+
+            </div>
+            <div class="form-group">
+              Ano de Inicio:<input type="text" class="form-control" name="start" value="14">
+              Ano de Fim:<input type="text" class="form-control" name="end" value="23">
+              <br>
+              vline_min:<input type="text" class="form-control" name="vline_min" value="-2">
+              vline_max:<input type="text" class="form-control" name="vline_max" value="11">
+
+
+            </div>
+            </br>
+            <div class=".container">
+              <input type="submit" class="text-center btn btn-primary" value="Calcular">
+              <!-- <button type="button" onclick="goBack()" class="btn btn-outline-danger">Voltar</button> -->
+            </div>
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+            </script>
+        </div>
+      </div>
+
+      <div class="col-xl-9">
+        <h4 class="text-center">Resultados</h4>
+        <!-- <img class="img-fluid" src="/static/KUc.png"> -->
+
+      </div>
+
+      <!-- Local onde a tabela de resultados será inserida -->
+      <!-- A tabela é gerada dentro do arquivo python tabela.py -->
+
+    </div>
+    </div>
+    </div>
+    <footer class=".container ">
+      <p class="text-center">&copy; Spread Scanner 2021/05/01</p>
+    </footer>
+
+</html>
