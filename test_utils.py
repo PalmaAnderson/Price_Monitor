@@ -1,6 +1,6 @@
 import unittest
 import Utils
-
+import Graph_Utils
 class LearnTest(unittest.TestCase):
 
     def test_pricetofloat_comreais(self):
@@ -26,7 +26,15 @@ class LearnTest(unittest.TestCase):
         expected=1234.56
         result=Utils.pricetofloat(string)
         self.assertEqual(result,expected)
-    
+
+    def test_js_formatting(self):
+        string="2020050612:34"
+        expected="[new Date('2020-05-06T12:00'),"
+        result=Graph_Utils.jsdata_format(string)
+        self.assertEqual(result,expected)
+
+
+   
 
 if __name__ == '__main__':
 

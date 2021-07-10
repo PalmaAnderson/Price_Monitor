@@ -7,7 +7,6 @@ cursor = conn.cursor()
 timeline_list=[]
 priceline_list=[]
 name_list=[]
-####
 time_list=[]
 fuckinmatrix=[]
 cursor.execute("""SELECT * FROM (SELECT distinct(time) FROM Quotes ORDER BY time desc limit 100)  ORDER BY time ASC""")
@@ -25,7 +24,7 @@ for x in range (0, len (time_list)):
 
 
 
-        ###### OLD ####
+###### OLD ####
 for x in range (4,11):
     sql="Select Quotes.link_id,site_name, price,time from Links,Sites, Quotes where Links.site_id=Sites.site_id and Quotes.link_id=Links.link_id and Quotes.link_id=?"
     cursor.execute(sql.replace("?",str(x)))
@@ -57,8 +56,8 @@ for x in range (4,11):
 #todo pastas
 
 html=Graph_Utils.read()
-html=Graph_Utils.add_dados(html,priceline_list,timeline)
-html=Graph_Utils.add_nomes(html,name_list)
+html=Graph_Utils.add_info(html,priceline_list,timeline)
+html=Graph_Utils.add_names(html,name_list)
 Graph_Utils.save_to_file(html)
 
 print ("End Plot")  

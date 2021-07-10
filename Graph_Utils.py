@@ -21,7 +21,7 @@ def jsdata_format(data):
     string+=":00'),"
     return (string)
 
-def add_dados(html,priceline_list,timeline):
+def add_info(html,priceline_list,timeline):
     data=""
     for event in range (0,len(priceline_list[0])):
         linha = jsdata_format(str(timeline[event]))
@@ -33,7 +33,7 @@ def add_dados(html,priceline_list,timeline):
     return html
 
 #Todo Sort names by last price, low to high
-def add_nomes(html,name_list):
+def add_names(html,name_list):
     string=""
     for name in name_list:
         newstring="data.addColumn('number', '_name_');"

@@ -1,16 +1,16 @@
 import sqlite3, time
 
-def handle_link_read(item):
+def SQL_adapter(item):
     site_name           = str(item[0])
     site_selector_type  = str(item[1])
     site_selector_name  = str(item[2])
     link_id             = str(item[3])
     url                 = str(item[4])
     print (site_name, end="\t")
+
     return (site_name,site_selector_type,site_selector_name,link_id,url)
 
 def handle_busca(site,seletor,nome,link):
-    #tratar futuramente de casos especiais
     if site=="Kabum":
         #link="about:blank"
         pass
@@ -76,4 +76,5 @@ def handle_db_write(price,link_id,time):
         
 if __name__ == '__main__':
     print("Utils.py não deve ser executada isolamente")
+
 
